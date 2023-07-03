@@ -1,5 +1,12 @@
 
 
+## [1.2.0](https://github.com/herberttn/vite-plugin-typescript-transform/compare/1.0.2...1.2.0) (2023-07-03)
+
+
+### Features
+
+* add jsdoc to options type ([7699aa5](https://github.com/herberttn/vite-plugin-typescript-transform/commit/7699aa54cf1bb8752474eaffdf76e5e8c3b617f9))
+
 ### [1.0.2](https://github.com/herberttn/vite-plugin-typescript-transform/compare/1.0.0...1.0.2) (2023-07-03)
 
 
