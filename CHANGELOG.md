@@ -1,5 +1,12 @@
 
 
+### [1.2.1](https://github.com/herberttn/vite-plugin-typescript-transform/compare/1.2.0...1.2.1) (2023-07-03)
+
+
+### Bug Fixes
+
+* clarify esbuild position in the plugin invocation order ([d719a8f](https://github.com/herberttn/vite-plugin-typescript-transform/commit/d719a8f924b008d49e873f4c970a41c54f33a3e6))
+
 ## [1.2.0](https://github.com/herberttn/vite-plugin-typescript-transform/compare/1.0.2...1.2.0) (2023-07-03)
 
 
