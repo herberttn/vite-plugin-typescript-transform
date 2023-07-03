@@ -1,0 +1,71 @@
+{
+  "name": "vite-plugin-typescript-transform",
+  "description": "Applies the typescript compiler during vite transform build phase.",
+  "version": "0.0.0",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "github:herberttn/vite-plugin-typescript-transform"
+  },
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "scripts": {
+    "build": "unbuild",
+    "clean": "rimraf --glob dist **/*.eslintcache **/*.tsbuildinfo **/.vite/ **/.vitest/",
+    "release": "release-it --dry-run",
+    "typecheck": "tsc --noEmit"
+  },
+  "peerDependencies": {
+    "typescript": ">= 4",
+    "vite": ">= 4"
+  },
+  "devDependencies": {
+    "@types/node": "14.18.53",
+    "rimraf": "5.0.1",
+    "typescript": "5.1.6",
+    "unbuild": "1.2.1",
+    "vite": "4.3.9"
+  },
+  "engines": {
+    "node": "> 14.18"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "author": {
+    "name": "herberttn",
+    "url": "https://github.com/herberttn"
+  },
+  "homepage": "https://github.com/herberttn/vite-plugin-typescript-transform",
+  "bugs": "https://github.com/herberttn/vite-plugin-typescript-transform/issues",
+  "keywords": [
+    "code",
+    "compiler",
+    "decorators",
+    "es",
+    "esm",
+    "javascript",
+    "js",
+    "module",
+    "node",
+    "nodejs",
+    "plugin",
+    "transform",
+    "transpile",
+    "ts",
+    "tsconfig",
+    "typescript",
+    "vite",
+    "vitejs",
+    "vitest"
+  ]
+}

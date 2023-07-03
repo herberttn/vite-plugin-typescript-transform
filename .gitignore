@@ -9,3 +9,16 @@
 **/*.tgz
 **/*.war
 **/*.zip
+
+**/.gradle/
+**/.idea/
+**/.vscode/
+
+**/*.cache
+**/*.eslintcache
+**/*.tsbuildinfo
+
+**/.vite/
+**/.vitest/
+**/dist/
+**/node_modules/

@@ -1,2 +1,2 @@
 # vite-plugin-typescript-transform
-Applies the typescript compiler during vite's transform build phase.
+Applies the typescript compiler during vite transform build phase.
