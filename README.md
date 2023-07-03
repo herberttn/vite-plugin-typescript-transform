@@ -34,16 +34,17 @@ See the [`Options`][link-to-options] interface.
 As of now, [`vite`][link-to-vite] uses [`esbuild`][link-to-esbuild] to transpile typescript, which doesn't yet support the new [ECMAScript decorators][link-to-ecmascript-decorators].  
 But [`typescript`][link-to-typescript] added support for them in [`v5`][link-to-typescript-v5-announcement].
 
-This example transpiles the new ECMAScript decorators into code that is usable in runtimes that do not yet support it.
+This example down-levels the new ECMAScript decorators into code that is usable in runtimes that do not yet support it.
 ```typescript
+import ts from 'typescript';
+import { defineConfig } from 'vite';
 import { vitePluginTypescriptTransform } from 'vite-plugin-typescript-transform';
-import { defineConfig } from 'vitest/config';
 
 export default defineConfig({
   // ...your vite configuration
   plugins: [
     vitePluginTypescriptTransform({
-      enfore: 'pre',
+      enforce: 'pre',
       filter: {
         files: {
           include: /\.ts$/,
@@ -51,7 +52,7 @@ export default defineConfig({
       },
       tsconfig: {
         override: {
-          target: 'ES2021',
+          target: ts.ScriptTarget.ES2021,
         },
       },
     }),
