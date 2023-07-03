@@ -20,7 +20,10 @@
     "after:bump": "npm run build"
   },
   "npm": {
-    "publish": true
+    "publish": true,
+    "publishArgs": [
+      "--provenance"
+    ]
   },
   "plugins": {
     "@release-it/conventional-changelog": {
