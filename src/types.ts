@@ -13,7 +13,7 @@ interface Options {
    * Plugin invocation order:
    * - alias resolution
    * - `enforce: 'pre'` plugins
-   * - vite core plugins
+   * - vite core plugins (esbuild)
    * - normal plugins
    * - vite build plugins
    * - `enforce: 'post'` plugins
