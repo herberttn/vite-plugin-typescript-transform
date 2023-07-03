@@ -21,7 +21,7 @@
   "scripts": {
     "build": "unbuild",
     "clean": "rimraf --glob dist **/*.eslintcache **/*.tsbuildinfo **/.vite/ **/.vitest/",
-    "release": "release-it --dry-run",
+    "release": "release-it",
     "typecheck": "tsc --noEmit"
   },
   "peerDependencies": {
@@ -29,7 +29,9 @@
     "vite": ">= 4"
   },
   "devDependencies": {
+    "@release-it/conventional-changelog": "5.1.1",
     "@types/node": "14.18.53",
+    "release-it": "15.11.0",
     "rimraf": "5.0.1",
     "typescript": "5.1.6",
     "unbuild": "1.2.1",

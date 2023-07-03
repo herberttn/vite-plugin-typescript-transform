@@ -1,0 +1,32 @@
+name: release
+
+on:
+  workflow_dispatch:
+
+env:
+  node: 20
+
+permissions:
+  contents: write
+  id-token: write
+  issues: write
+  pull-requests: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-node@v3
+        with:
+          cache: npm
+          node-version: ${{ env.node }}
+      - run: npm ci
+      - run: npm audit signatures
+      - run: npm run release -- --npm.skipChecks
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

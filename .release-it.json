@@ -1,0 +1,33 @@
+{
+  "git": {
+    "commit": true,
+    "commitMessage": "v${version}",
+    "push": true,
+    "requireBranch": "main",
+    "requireCommits": true,
+    "requireCommitsFail": true,
+    "tag": true,
+    "tagAnnotation": "v${version}"
+  },
+  "github": {
+    "comments": true,
+    "release": true,
+    "releaseName": "v${version}",
+    "web": false
+  },
+  "hooks": {
+    "before:init": "npm run typecheck",
+    "after:bump": "npm run build"
+  },
+  "npm": {
+    "publish": true
+  },
+  "plugins": {
+    "@release-it/conventional-changelog": {
+      "infile": "CHANGELOG.md",
+      "preset": {
+        "name": "conventionalcommits"
+      }
+    }
+  }
+}
