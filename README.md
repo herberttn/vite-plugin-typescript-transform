@@ -7,8 +7,8 @@ vite-plugin-typescript-transform
 
 [badge-license]: https://img.shields.io/github/license/herberttn/vite-plugin-typescript-transform?style=flat-square
 [badge-license-link]: ./LICENSE.md
-[badge-npm]: https://img.shields.io/npm/v/@herberttn/vite-plugin-typescript-transform?logo=npm&style=flat-square
-[badge-npm-link]: https://www.npmjs.com/package/@herberttn/vite-plugin-typescript-transform
+[badge-npm]: https://img.shields.io/npm/v/vite-plugin-typescript-transform?logo=npm&style=flat-square
+[badge-npm-link]: https://www.npmjs.com/package/vite-plugin-typescript-transform
 [badge-workflow-ci]: https://img.shields.io/github/actions/workflow/status/herberttn/vite-plugin-typescript-transform/ci.yml?branch=main&label=ci&logo=github&style=flat-square
 [badge-workflow-ci-link]: https://github.com/herberttn/vite-plugin-typescript-transform/actions/workflows/ci.yml
 
