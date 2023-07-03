@@ -1,6 +1,6 @@
 {
   "name": "vite-plugin-typescript-transform",
-  "description": "Applies the typescript compiler during vite transform build phase.",
+  "description": "Applies the TypeScript compiler during Vite transform build phase.",
   "version": "1.2.0",
   "license": "MIT",
   "repository": {

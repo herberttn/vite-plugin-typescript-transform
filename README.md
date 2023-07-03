@@ -12,7 +12,9 @@ vite-plugin-typescript-transform
 [badge-workflow-ci]: https://img.shields.io/github/actions/workflow/status/herberttn/vite-plugin-typescript-transform/ci.yml?branch=main&label=ci&logo=github&style=flat-square
 [badge-workflow-ci-link]: https://github.com/herberttn/vite-plugin-typescript-transform/actions/workflows/ci.yml
 
-Applies the typescript compiler during vite transform build phase.
+Applies the TypeScript compiler during Vite transform build phase.
+
+This plugin may allow the use of language features not yet supported by [`vite's`][link-to-vite] default compiler, [`esbuild`][link-to-esbuild].
 
 [link-to-ecmascript-decorators]: https://tc39.es/proposal-decorators
 [link-to-esbuild]: https://www.npmjs.com/package/esbuild
@@ -28,13 +30,13 @@ npm install --save-dev vite-plugin-typescript-transform
 ```
 
 ### Options
-See the [`Options`][link-to-options] interface.
+See the [`Options`][link-to-options] interface and its inline documentation.
+
+### Warning
+This plugin does not change or disable any of [`vite's`][link-to-vite] compiler/features/options. It only transpiles the code using the [`typescript`][link-to-typescript] compiler and lets [`vite`][link-to-vite] move on with the transpiled code.
 
 ### Transform ECMAScript decorators
-As of now, [`vite`][link-to-vite] uses [`esbuild`][link-to-esbuild] to transpile typescript, which doesn't yet support the new [ECMAScript decorators][link-to-ecmascript-decorators].  
-But [`typescript`][link-to-typescript] added support for them in [`v5`][link-to-typescript-v5-announcement].
-
-This example down-levels the new ECMAScript decorators into code that is usable in runtimes that do not yet support it.
+The new [ECMAScript decorators][link-to-ecmascript-decorators] are not supported by [`esbuild`][link-to-esbuild] (yet), but they thy are supported by [`typescript`][link-to-typescript] since `v5` ([see the announcement][link-to-typescript-v5-announcement]). This example down-levels the new decorators into code that is usable in runtimes that do not yet support it.
 ```typescript
 import ts from 'typescript';
 import { defineConfig } from 'vite';
