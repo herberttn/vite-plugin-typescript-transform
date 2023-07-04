@@ -30,7 +30,7 @@ function createPlugin(options?: Options): PluginOption {
 
       try {
         const compilerOptions = prepareCompilerOptions(cache, file, options);
-        const compiler = ts.transpileModule(code, { compilerOptions });
+        const compiler = ts.transpileModule(code, { compilerOptions, fileName: file });
 
         return {
           code: compiler.outputText,
