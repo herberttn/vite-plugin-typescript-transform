@@ -1,5 +1,12 @@
 
 
+### [1.2.2](https://github.com/herberttn/vite-plugin-typescript-transform/compare/1.2.1...1.2.2) (2023-07-04)
+
+
+### Bug Fixes
+
+* sourcemap and error code frame ([a2d5a74](https://github.com/herberttn/vite-plugin-typescript-transform/commit/a2d5a745a019d8b7b71589be3963dd75fcbc4e4f))
+
 ### [1.2.1](https://github.com/herberttn/vite-plugin-typescript-transform/compare/1.2.0...1.2.1) (2023-07-03)
 
 
