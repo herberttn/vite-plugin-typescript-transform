@@ -36,7 +36,7 @@ See the [`Options`][link-to-options] interface and its inline documentation.
 This plugin does not change or disable any of [`vite's`][link-to-vite] compiler/features/options. It only transpiles the code using the [`typescript`][link-to-typescript] compiler and lets [`vite`][link-to-vite] move on with the transpiled code.
 
 ### Transform ECMAScript decorators
-The new [ECMAScript decorators][link-to-ecmascript-decorators] are not supported by [`esbuild`][link-to-esbuild] (yet), but they thy are supported by [`typescript`][link-to-typescript] since `v5` ([see the announcement][link-to-typescript-v5-announcement]). This example down-levels the new decorators into code that is usable in runtimes that do not yet support it.
+The new [ECMAScript decorators][link-to-ecmascript-decorators] are not supported by [`esbuild`][link-to-esbuild] (yet), but they are supported by [`typescript`][link-to-typescript] since `v5` ([see the announcement][link-to-typescript-v5-announcement]). This example down-levels the new decorators into code that is usable in runtimes that do not yet support it.
 ```typescript
 import ts from 'typescript';
 import { defineConfig } from 'vite';
