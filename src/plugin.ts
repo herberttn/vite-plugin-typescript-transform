@@ -80,7 +80,6 @@ function prepareCompilerOptions(cache: Map<string, CompilerOptions>, file: strin
     const compilerOptions = {
       ...tsconfigOptions,
       ...options?.tsconfig?.override,
-      pathsBasePath: '/Users/alexeysolovyov/CODE/GitHub/rattus-orm/attempt-3/packages/experimental-es23-decorators/src'
     } satisfies CompilerOptions;
 
     cache.set(key, compilerOptions);
