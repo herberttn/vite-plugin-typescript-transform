@@ -68,15 +68,19 @@ function prepareCompilerOptions(cache: Map<string, CompilerOptions>, file: strin
     ?? ts.findConfigFile(file, ts.sys.fileExists);
 
   if (location) {
-    const parsed = ts.readConfigFile(location, ts.sys.readFile);
+    const { config, error } = ts.readConfigFile(location, ts.sys.readFile);
 
-    if (parsed.error) {
-      throw parsed.error;
+    if (error) {
+      throw error;
     }
 
+    const configLocation = dirname(location)
+    const { options: tsconfigOptions } = ts.parseJsonConfigFileContent(config, ts.sys, configLocation)
+
     const compilerOptions = {
-      ...parsed.config.compilerOptions,
+      ...tsconfigOptions,
       ...options?.tsconfig?.override,
+      pathsBasePath: '/Users/alexeysolovyov/CODE/GitHub/rattus-orm/attempt-3/packages/experimental-es23-decorators/src'
     } satisfies CompilerOptions;
 
     cache.set(key, compilerOptions);
