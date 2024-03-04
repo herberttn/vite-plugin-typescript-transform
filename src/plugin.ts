@@ -1,4 +1,4 @@
-import { dirname } from 'node:path';
+import { basename, dirname } from 'node:path';
 import { EOL } from 'node:os';
 
 import { createFilter } from 'vite';
@@ -64,26 +64,31 @@ function prepareCompilerOptions(cache: Map<string, CompilerOptions>, file: strin
     return cache.get(key) as CompilerOptions;
   }
 
+  const compilerOptions = parseCompilerOptions(file, options);
+  cache.set(key, compilerOptions);
+
+  return compilerOptions;
+}
+
+function parseCompilerOptions(file: string, options?: Options): CompilerOptions {
   const location = options?.tsconfig?.location
     ?? ts.findConfigFile(file, ts.sys.fileExists);
 
-  if (location) {
-    const parsed = ts.readConfigFile(location, ts.sys.readFile);
-
-    if (parsed.error) {
-      throw parsed.error;
-    }
-
-    const compilerOptions = {
-      ...parsed.config.compilerOptions,
-      ...options?.tsconfig?.override,
-    } satisfies CompilerOptions;
-
-    cache.set(key, compilerOptions);
-    return compilerOptions;
+  if (!location) {
+    throw new Error(`Could not find TypeScript configuration for ${file}`);
   }
 
-  throw new Error(`Could not find TypeScript configuration for ${file}`);
+  const { config: tsconfig, error } = ts.readConfigFile(location, ts.sys.readFile);
+
+  if (error) {
+    throw error;
+  }
+
+  const directory = dirname(location);
+  const name = basename(location);
+  const parsed = ts.parseJsonConfigFileContent(tsconfig, ts.sys, directory, undefined, name);
+
+  return parsed.options;
 }
 
 export {
