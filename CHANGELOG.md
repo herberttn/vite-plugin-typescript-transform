@@ -1,5 +1,12 @@
 
 
+## [1.3.0](https://github.com/herberttn/vite-plugin-typescript-transform/compare/1.2.2...1.3.0) (2024-03-04)
+
+
+### Features
+
+* support extends when parsing tsconfig.json file ([4ce7744](https://github.com/herberttn/vite-plugin-typescript-transform/commit/4ce7744b31b7b98e9f57d314af04751711426acd))
+
 ### [1.2.2](https://github.com/herberttn/vite-plugin-typescript-transform/compare/1.2.1...1.2.2) (2023-07-04)
 
 
