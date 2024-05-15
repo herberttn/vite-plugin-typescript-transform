@@ -88,7 +88,7 @@ function parseCompilerOptions(file: string, options?: Options): CompilerOptions 
   const name = basename(location);
   const parsed = ts.parseJsonConfigFileContent(tsconfig, ts.sys, directory, undefined, name);
 
-  return parsed.options;
+  return { ...parsed.options, ...options?.tsconfig?.override };
 }
 
 export {
