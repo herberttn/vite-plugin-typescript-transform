@@ -1,5 +1,12 @@
 
 
+### [1.3.1](https://github.com/herberttn/vite-plugin-typescript-transform/compare/1.3.0...1.3.1) (2024-05-17)
+
+
+### Bug Fixes
+
+* respect tsconfig.override ([#5](https://github.com/herberttn/vite-plugin-typescript-transform/issues/5)) ([6bbee6b](https://github.com/herberttn/vite-plugin-typescript-transform/commit/6bbee6b67905dda5d0d59b67961d7dc6f6539782))
+
 ## [1.3.0](https://github.com/herberttn/vite-plugin-typescript-transform/compare/1.2.2...1.3.0) (2024-03-04)
 
 
