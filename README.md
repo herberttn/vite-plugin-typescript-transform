@@ -17,8 +17,9 @@ Applies the TypeScript compiler during Vite transform build phase.
 This plugin may allow the use of language features not yet supported by [`vite's`][link-to-vite] default compiler, [`esbuild`][link-to-esbuild].
 
 > [!IMPORTANT]
-> This plugin does not change or disable any of [`vite's`][link-to-vite] compiler/features/options.  
-> It only transpiles the code using the [`typescript`][link-to-typescript] compiler and lets [`vite`][link-to-vite] move on with the transpiled code.
+> - It does not change or disable any of [`vite`][link-to-vite] compiler/features/options.
+> - It only transpiles the code using the [`typescript`][link-to-typescript] compiler and lets [`vite`][link-to-vite] move on with the transpiled code.
+> - The [`typescript`][link-to-typescript] configuration is what controls the transpilation and its outputs.
 
 [link-to-ecmascript-decorators]: https://tc39.es/proposal-decorators
 [link-to-esbuild]: https://www.npmjs.com/package/esbuild
@@ -62,3 +63,13 @@ export default defineConfig({
   ],
 });
 ```
+
+### Common errors/problems
+
+##### `Sourcemap is likely to be incorrect: a plugin (vite-plugin-typescript-transform) was used to transform files, but didn't generate a sourcemap for the transformation.`
+This means that the plugin transformed the code but it did not generate sourcemaps for the changes.
+The detail here is that the plugin is using [`typescript`][link-to-typescript] directly, so its configuration play a crucial role in what happens.
+More specifically: to generate sourcemaps, sourcemaps need to be enabled in the [`typescript`][link-to-typescript] configuration.
+This can be achieved in two different ways:
+- by setting `compilerOptions.sourceMap` to `true` in the `tsconfig.json` file
+- by setting `tsconfig.override.sourceMap` to `true` in the plugin configuration
